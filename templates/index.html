@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sham Scanner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <h2 class="site-name">Sham Scanner</h2>
+    </div>
+  </header>
+
+  <main>
+    <!-- Step 1: Welcome Page -->
+    <section id="landing-page" class="page card">
+      <h1>Welcome!</h1>
+      <p>Detect fake reviews using our smart eCAPTCHA system.</p>
+      <button id="start-button">Let's Start</button>
+    </section>
+
+    <!-- Step 2: eCAPTCHA Page -->
+    <section id="captcha-page" class="page card" style="display: none;">
+      <h1>Verify You're Human 🤖</h1>
+      <canvas id="captcha-canvas" width="200" height="70"></canvas>
+      <input type="text" id="captcha-input" placeholder="Type the code shown above" />
+      <button id="next-button" disabled>Next</button>
+    </section>
+
+    <!-- Step 3: Review Submission Page -->
+    <section id="review-page" class="page card" style="display: none;">
+      <h1>Enter the Review</h1>
+      <textarea id="review-text" placeholder="Write review..."></textarea>
+      <button id="submit-button">Submit</button>
+      <p id="result"></p>
+    </section>
+
+    <!-- Step 4: Result Page -->
+    <section id="navigation-page" class="page card" style="display: none;">
+      <h1>Result</h1>
+      <div class="verdict-box">
+        <p id="final-result">🔍 Processing...</p>
+      </div>
+      <button id="back-button">Try Another Review</button>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
